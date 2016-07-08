@@ -1,0 +1,19 @@
+{
+  "name": "calculator",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.spec.js"
+  },
+  "keywords": [],
+  "author": "Drake Leung",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.0.1",
+    "eslint-config-airbnb-base": "^4.0.0",
+    "eslint-plugin-import": "^1.10.2",
+    "mocha": "^2.5.3"
+  }
+}
