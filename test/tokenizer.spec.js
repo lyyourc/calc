@@ -17,7 +17,7 @@ describe('tokenizer()', function() {
   it(`should return
     [
       { type: 'number', value: '1' },
-      { type: 'operator', value: '+' },
+      { type: 'operator', value: '+', priority: 0 },
       { type: 'number', value: '2' },
     ]
     if passing '1+2'`,
@@ -25,7 +25,7 @@ describe('tokenizer()', function() {
       expect(tokenizer('1+2')).to.deep.equal(
         [
           { type: 'number', value: '1' },
-          { type: 'operator', value: '+' },
+          { type: 'operator', value: '+', priority: 0 },
           { type: 'number', value: '2' },
         ]
       )

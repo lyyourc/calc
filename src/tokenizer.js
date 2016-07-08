@@ -23,6 +23,7 @@ const tokenizer = (
       tokens.push({
         type: 'operator',
         value: char,
+        priority: /\*|\//.test(char) ? 1 : 0,
       })
 
       current++

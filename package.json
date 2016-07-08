@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/*.spec.js"
+    "test": "mocha --recursive test/*.spec.js"
   },
   "keywords": [],
   "author": "Drake Leung",
