@@ -1,11 +1,12 @@
 const tokenizer = (
   input = ''
 ) => {
+  const newInput = input.replace(/\s/g, '')
   const tokens = []
   let current = 0
 
-  while (current < input.length) {
-    let char = input[current]
+  while (current < newInput.length) {
+    let char = newInput[current]
 
     if (char === '(' || char === ')') {
       tokens.push({
@@ -36,7 +37,7 @@ const tokenizer = (
       let value = ''
       while (NUMBERS.test(char)) {
         value += char
-        char = input[++current]
+        char = newInput[++current]
       }
 
       tokens.push({

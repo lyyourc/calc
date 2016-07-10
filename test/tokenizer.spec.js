@@ -22,7 +22,7 @@ describe('tokenizer()', function() {
     ]
     if passing '1+2'`,
     function() {
-      expect(tokenizer('1+2')).to.deep.equal(
+      expect(tokenizer('1 + 2')).to.deep.equal(
         [
           { type: 'number', value: '1' },
           { type: 'operator', value: '+', priority: 0 },
