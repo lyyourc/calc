@@ -14,8 +14,18 @@ describe('toRPN()', function() {
       .to.equal('342*+')
   })
 
-  it('should return `1+2-3*4/5` if passing `12+34*5/-`', function() {
+  it('should return `12+34*5/-` if passing `1+2-3*4/5`', function() {
     expect(tokensToString(toRPN(tokenizer('1+2-3*4/5'))))
       .to.equal('12+34*5/-')
+  })
+
+  it('should return `13+42/*` if passing `(1+3)*(4/2)`', function() {
+    const rpn = toRPN(tokenizer('(1+3)*(4/2)'))
+    expect(tokensToString(rpn)).to.equal('13+42/*')
+  })
+
+  it('should return `4031-+` if passing `40+(3-1)`', function() {
+    const rpn = toRPN(tokenizer('40+(3-1)'))
+    expect(tokensToString(rpn)).to.equal('4031-+')
   })
 })

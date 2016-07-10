@@ -13,12 +13,7 @@ const toRPN = (
       RPN.push(token)
     }
 
-    if (type === 'operator' || type === 'paren') {
-      if (operatorStack.top == null) {
-        operatorStack.push(token)
-        return
-      }
-
+    if (type === 'operator') {
       while (
         operatorStack.top &&
         priority <= operatorStack.top.value.priority
@@ -27,6 +22,17 @@ const toRPN = (
       }
 
       operatorStack.push(token)
+    }
+
+    if (type === 'paren') {
+      if (value === '(') {
+        operatorStack.push(token)
+      } else {
+        while (operatorStack.top && operatorStack.top.value.value !== '(') {
+          RPN.push(operatorStack.pop())
+        }
+        if (operatorStack.top && operatorStack.top.value.value === '(') operatorStack.pop()
+      }
     }
 
     if (index === tokens.length - 1) {
