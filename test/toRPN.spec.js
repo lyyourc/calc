@@ -28,4 +28,9 @@ describe('toRPN()', function() {
     const rpn = toRPN(tokenizer('40+(3-1)'))
     expect(tokensToString(rpn)).to.equal('4031-+')
   })
+
+  it('shoudl return `3242-+*` if passing `3*(2+(4-2))`', function() {
+    const rpn = toRPN(tokenizer('3*(2+(4-2))'))
+    expect(tokensToString(rpn)).to.equal('3242-+*')
+  })
 })

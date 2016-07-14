@@ -27,4 +27,8 @@ describe('calc()', function() {
   it('should return `8` if passing `(1+3)*(4/2)`', function() {
     expect(calc('(1+3)*(4/2)')).to.equal(8)
   })
+
+  it('should return `12` if passing `3*(2+(4-2))`', function() {
+    expect(calc('3*(2+(4-2))')).to.equal(12)
+  })
 })
