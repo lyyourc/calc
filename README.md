@@ -1,6 +1,9 @@
 # calc
 a mathematical expressions parser
 
+## Slide
+:rocket: http://drakeleung.github.io/demo/slides/calc
+
 ## See Also
 - [土法写解释器| Hello Code
 ](http://wanghuanming.com/2015/04/write-a-interpreter-in-a-simple-way/)
